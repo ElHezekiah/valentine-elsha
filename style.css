@@ -1,0 +1,141 @@
+/* --- 1. RESET & DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fff0f6;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- 2. VIDEO LATAR (BACKGROUND) --- */
+#bgVideoBlok {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1 !important; 
+    object-fit: cover;
+    filter: blur(8px) brightness(0.6);
+    pointer-events: none;
+}
+
+/* --- 3. CONTAINER & CARD (UTAMA) --- */
+.container {
+    width: 95%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    z-index: 1000 !important; /* Di atas segalanya */
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    border: 2px solid #ffb6c1;
+}
+
+/* --- 4. TOMBOL & TEKS --- */
+h2 { color: #ff4d6d; font-size: 1.4rem; line-height: 1.4; margin-bottom: 10px; }
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    width: 220px;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #ff4d6d;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+}
+
+#btnGak { background: #f0f0f0; color: #888; box-shadow: none; }
+
+.btn-foto {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 4px solid #ff4d6d;
+    cursor: pointer;
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 15px;
+    border: 2px solid #ffb6c1;
+    padding: 12px;
+    margin-top: 15px;
+    resize: none;
+}
+
+/* --- 5. EFEK JATUH (HUJAN FOTO & MAWAR) --- */
+.hujan-item {
+    position: fixed;
+    top: -150px;
+    z-index: 1 !important; /* Di bawah card, di atas video */
+    pointer-events: none;
+    animation: jatuh linear forwards;
+}
+
+.hujan-foto {
+    width: 85px;
+    height: 85px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hujan-mawar { font-size: 28px; }
+
+@keyframes jatuh {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(120vh) rotate(720deg); opacity: 0; }
+}
+
+/* Sakura/Hati */
+.heart {
+    position: absolute;
+    pointer-events: none;
+    animation: fly 4s linear forwards;
+    z-index: 1;
+}
+
+@keyframes fly {
+    0% { transform: translateY(100vh) scale(0); opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+}
+
+footer { position: fixed; bottom: 15px; font-size: 10px; color: #ffb6c1; }
+
+@media (max-width: 600px) {
+    h2 { font-size: 1.1rem; }
+    .btn { width: 180px; }
+}
