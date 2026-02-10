@@ -31,10 +31,10 @@ function kirimWA() {
     if (pesanInput) {
         const pesan = pesanInput.value;
         if (pesan && pesan.trim() !== "") {
-            const url = `https://api.whatsapp.com/send?phone=${nomorWA}&text=Halo Sayang! Ini perasaan aku:%0A${encodeURIComponent(pesan)}`;
+            const url = `https://api.whatsapp.com/send?phone=${nomorWA}&text=Yaudah Ini Isi Hati Aku:%0A${encodeURIComponent(pesan)}`;
             window.open(url, '_blank');
         } else {
-            alert("Isi dulu pesannya, Elsha sayang! ❤️");
+            alert("Isi dulu pesannya, Elsha cantikkkkk! ❤️");
         }
     }
 }
@@ -128,4 +128,5 @@ if (!document.getElementById('vidDoi')) {
 } else {
     // Kalau di halaman video, jalankan hujan foto
     hujanCinta();
+
 }
